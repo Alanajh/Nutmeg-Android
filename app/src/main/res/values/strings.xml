@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Nutmeg</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="not_registered">Not Registered?</string>
+    <string name="registered">Register</string>
+    <string name="cnf_password">Confirm Password</string>
+    <string name="bn_cnf">Confirm</string>
+    <string name="btn_grades">Grades</string>
+    <string name="btn_tests">Tests</string>
+
+    <string name="btn_troubleshooting">Troubleshooting</string>
+    <string name="btn_settings">Settings</string>
+    <string name="btn_path">Database Path</string>
+    <string name="btn_dbName">Database Name</string>
+    <string name="btn_test_list">clicky</string>
+
+    <string name="database_connection_switch">Database connected</string>
+    <string name="question">Question:</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_previous">Previous</string>
+
+</resources>
