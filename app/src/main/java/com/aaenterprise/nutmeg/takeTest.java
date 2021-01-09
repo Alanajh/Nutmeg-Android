@@ -31,7 +31,7 @@ public class takeTest extends AppCompatActivity {
 
         db = new DatabaseHelper(takeTest.this);
         testQuestion = db.getQ();
-        testAnswers = db.getA();
+        //testAnswers = db.getA();
         testLength = testQuestion.size();
         home_btn = findViewById(R.id.btn_home);
         previous_btn = findViewById(R.id.previous_btn);
@@ -44,9 +44,7 @@ public class takeTest extends AppCompatActivity {
         a4 = findViewById(R.id.radioButton4);
 
         // first test question
-        //question_textview.setText(testQuestion.get(i));
-
-
+        question_textview.setText(testQuestion.get(i));
 
         View.OnClickListener listen=new View.OnClickListener() {
             @Override
