@@ -16,9 +16,9 @@ public class takeTest extends AppCompatActivity {
     DatabaseHelper db;
     Button home_btn, previous_btn, next_btn;
     RadioButton a1, a2, a3, a4;
-    TextView question_textview;
-    ArrayList<String> testQuestion, testAnswers;
-    int change = 0;
+    TextView question_textview, count_textview;
+    ArrayList<String> testQuestion, testAnswers;;
+    int count;
     int i = 0;
     int grade = 0;
     int testLength;
@@ -30,6 +30,7 @@ public class takeTest extends AppCompatActivity {
 
 
         db = new DatabaseHelper(takeTest.this);
+        count = 0;
         testQuestion = db.getQ();
         //testAnswers = db.getA();
         testLength = testQuestion.size();
@@ -37,6 +38,7 @@ public class takeTest extends AppCompatActivity {
         previous_btn = findViewById(R.id.previous_btn);
         next_btn = findViewById(R.id.next_btn);
         question_textview = findViewById(R.id.question_textview);
+        count_textview = findViewById(R.id.questionCount);
 
         a1 = findViewById(R.id.radioButton1);
         a2 = findViewById(R.id.radioButton2);
@@ -44,18 +46,13 @@ public class takeTest extends AppCompatActivity {
         a4 = findViewById(R.id.radioButton4);
 
         // first test question
-        question_textview.setText(testQuestion.get(i));
-
-        View.OnClickListener listen=new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(String.valueOf(TestingPage.class));
-                startActivity(i);
-            }
-        };
+        // question_textview.setText(testQuestion.get(i));
+        count_textview.setText("000 / " + testLength);
 
         previous_btn.setOnClickListener(v -> {
             question_textview.setText(testQuestion.get(i));
+            count--;
+            count_textview.setText(count + " / " + testLength);
             i--;
         });
 
@@ -64,14 +61,20 @@ public class takeTest extends AppCompatActivity {
             public void onClick(View v) {
                 question_textview.setText(testQuestion.get(i));
                 i++;
-
+                count++;
+                count_textview.setText(count + " / " + testLength);
+                if (count == testLength){
+                    testQuestion.add("Congrats this is the end of this test!");
+                    count = testLength;
+                }
                 switch (x) {
                     case 0:
                         x++;
                         break;
 
-                    case 11:
-                        next_btn.setOnClickListener(listen);
+                    case 10:
+                        // Intent i= new Intent(v.getContext(), TestingPage.class);
+                       // startActivity(i);
                         break;
                 }
             }
