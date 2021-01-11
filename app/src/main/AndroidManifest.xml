@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nutmeg"
         android:usesCleartextTraffic="true">
-        <activity android:name=".takeTest"></activity>
+        <activity android:name=".celebration_1"></activity>
+        <activity android:name=".takeTest" />
         <activity android:name=".TestingPage" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Troubleshooting" />

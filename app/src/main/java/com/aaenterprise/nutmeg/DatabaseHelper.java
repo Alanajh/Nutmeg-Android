@@ -194,12 +194,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = help.rawQuery(query, null);
         Integer a=0, b=0, c=0, d=0;
         Random random = new Random();
-        a = random.nextInt(11);
-        b = random.nextInt(11);
-        c = random.nextInt(11);
-        d = random.nextInt(11);
 
-        //testRandomsList.get(0).toString();
         Collections.shuffle(testRandomsList);
         for(int j = 0; j < 4; j++){
             testRandomsList.get(j).toString();
@@ -214,7 +209,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(null, " Was not successful.", Toast.LENGTH_LONG).show();
         }
         testAnswers2.add(testRandomsList.toString());
-        return testAnswers2;
+        return testAnswers;
     }
 
     public ArrayList<HashMap<String, String>> getAllTests(){
